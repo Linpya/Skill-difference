@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill difference</title>
+  <!-- <link rel = "stylesheet" href="styles.css"/> -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+
+</head>
+<body>
+  <div class="container">
+    <h1>Skill difference</h1>
+    <h2>Know the difference between you and your dream job</h2>
+    <div class="form-section">
+      <form action="/get_skills" method="POST">
+      <input type="text" name="job_role" placeholder="e.g. Data Scientist" required>
+      <button type="submit">Search</button>
+      <!-- <input type="text" id="jobInput" placeholder="Enter a job role (e.g., Data Scientist)" />
+      <button onclick="getSkills()">Search Skills</button> -->
+    </div>
+    <div class="results" id="skillsList">
+      <!-- Skills will appear here -->
+    </div>
+  </div>
+
+  <!-- <script>
+    async function getSkills() {
+      const jobRole = document.getElementById("jobInput").value;
+      const skillsList = document.getElementById("skillsList");
+      skillsList.innerHTML = "Loading...";
+
+      const dummySkills = {
+        "data scientist": ["Python", "Machine Learning", "SQL", "Statistics", "Data Visualization"],
+        "web developer": ["HTML", "CSS", "JavaScript", "React", "Git"]
+      };
+
+      setTimeout(() => {
+        const skills = dummySkills[jobRole.toLowerCase()] || ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5"];
+        skillsList.innerHTML = `<ul>${skills.map(skill => `<li>${skill}</li>`).join("")}</ul>`;
+      }, 1000);
+    }
+  </script> -->
+</body>
+</html>
